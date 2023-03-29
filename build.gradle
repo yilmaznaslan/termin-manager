@@ -23,11 +23,17 @@ repositories {
 	}
 
 }
-
+configurations {
+	all*.exclude module : 'spring-boot-starter-logging'
+}
 dependencies {
-	implementation 'org.example:berlinTerminFinder:1.0-SNAPSHOT'
+	implementation 'org.example:berlin-auslaenderbehorde-termin-bot:dev'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation ('org.springframework.boot:spring-boot-starter-log4j2') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+	}
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2:1.2.0.RELEASE'
+
 }
 
 tasks.named('test') {

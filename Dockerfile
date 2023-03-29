@@ -1,5 +1,7 @@
 FROM openjdk:17-alpine
 
-COPY build/libs/terminManager-1.0-SNAPSHOT-all.jar /terminManager-1.0-SNAPSHOT-all.jar
+COPY build/libs/termin-manager-1.0-SNAPSHOT.jar /termin-manager-1.0-SNAPSHOT.jar
 
-CMD ["java", "-jar", "terminManager-1.0-SNAPSHOT-all.jar"]
+EXPOSE 8080
+
+CMD ["java", "-jar", "termin-manager-1.0-SNAPSHOT.jar"]
