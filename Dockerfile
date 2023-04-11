@@ -1,7 +1,7 @@
 # Build stage
 FROM openjdk:17-alpine as builder
 
-RUN apk add --no-cache git
+RUN apk add --no-cache git gradle
 
 RUN git clone https://github.com/yilmaznaslan/termin-manager.git
 
