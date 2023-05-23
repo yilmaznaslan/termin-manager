@@ -17,12 +17,12 @@ public class TerminController {
 
     Logger logger = LoggerFactory.getLogger(TerminController.class);
 
-    @GetMapping("/terminSearchRequest")
+    @GetMapping("/terminRequest")
     public void createTerminSearchRequest() {
         logger.info("Receives a GEt request to termin search request");
     }
 
-    @PostMapping("/terminSearchRequest")
+    @PostMapping(value = "/terminRequest", consumes = "application/json")
     public void createTerminSearchRequest(@RequestBody FormTO formTO) {
         PersonalInfoFormTO personalInfoFormTO = formTO.getPersonalInfoFormTO();
         VisaFormTO visaFormTO = formTO.getVisaFormTO();

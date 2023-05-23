@@ -7,7 +7,7 @@ RUN git clone https://github.com/yilmaznaslan/termin-manager.git
 
 WORKDIR /termin-manager
 
-RUN git fetch && git checkout master && ./gradlew build
+RUN git fetch && git checkout master && git pull origin master && gradle build
 
 # Runtime stage
 FROM openjdk:17-alpine
