@@ -1,19 +1,7 @@
-# Build stage
-FROM openjdk:17-alpine as builder
-
-RUN apk add --no-cache git gradle
-
-RUN git clone https://github.com/yilmaznaslan/termin-manager.git
-
-WORKDIR /termin-manager
-
-RUN git fetch && git checkout master && git pull origin master && gradle build
-
-# Runtime stage
 FROM openjdk:17-alpine
 
 EXPOSE 8080
 
-COPY --from=builder /termin-manager/build/libs/*.jar /app.jar
+COPY build/libs/termin-manager-1.0-SNAPSHOT-all.jar /termin-manager-1.0-SNAPSHOT-all.jar
 
-CMD ["java", "-jar", "/app.jar"]
+CMD ["java", "-jar", "termin-manager-1.0-SNAPSHOT-all.jar"]
