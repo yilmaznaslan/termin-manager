@@ -26,9 +26,8 @@
     <Loggers>
         <Root level="INFO">
             <AppenderRef ref="Console"/>
-            <!--  <AppenderRef ref="elasticsearch"/> -->
+            <AppenderRef ref="elasticsearch"/>
         </Root>
-
     </Loggers>
 
 </Configuration>

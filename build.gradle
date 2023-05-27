@@ -28,7 +28,7 @@ configurations {
 }
 
 dependencies {
-    implementation('org.example:berlin-auslaenderbehorde-termin-bot:1.0-SNAPSHOT') {
+    implementation('org.example:berlin-auslaenderbehorde-termin-bot:dev') {
         exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j2.impl'
     }
     implementation 'org.springframework.boot:spring-boot-starter-web'
