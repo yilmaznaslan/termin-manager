@@ -15,7 +15,7 @@ repositories {
 	mavenLocal()
 	mavenCentral()
 	maven {
-		url 'https://yilmaznaslan-250602908823.d.codeartifact.us-east-1.amazonaws.com/maven/berlintermin/'
+		url 'https://yilmaznaslan-250602908823.d.codeartifact.eu-central-1.amazonaws.com/maven/berlin-auslaenderbehorde-termin-bot/'
 		credentials {
 			username "aws"
 			password System.env.CODEARTIFACT_AUTH_TOKEN
