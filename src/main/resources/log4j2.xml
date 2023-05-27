@@ -9,13 +9,6 @@
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="${LOG_PATTERN}"/>
-            <JSONLayout compact="true" complete="false" eventEol="true" properties="true" stacktraceAsString="true" includeTimeMillis="true">
-                 <KeyValuePair key="elementDescription" value="${ctx:elementDescription}" />
-                 <KeyValuePair key="seleniumProcess" value="${ctx:seleniumProcess}" />
-                 <KeyValuePair key="seleniumStatus" value="${ctx:seleniumProcess}" />
-                 <KeyValuePair key="formId" value="${ctx:formId}" />
-                <KeyValuePair key="timestamp" value="$${date:yyyy-MM-dd'T'HH:mm:ss.SSSZ}" />
-            </JSONLayout>
         </Console>
 
         <Http name="elasticsearch" url="${ELASTICSEARCH_URL}">
@@ -33,7 +26,7 @@
     <Loggers>
         <Root level="INFO">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="elasticsearch"/>
+            <!--  <AppenderRef ref="elasticsearch"/> -->
         </Root>
 
     </Loggers>
